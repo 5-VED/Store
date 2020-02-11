@@ -1,4 +1,4 @@
-const products = [];
+const Products = require('../Models/product');
 
 exports.getAddProducts= (req,res,next)=>{
     //res.send('<form action="/admin/addproduct" method="POST"><input type="text" name="title"><button type="submit">Add Product</button></form>');
@@ -19,7 +19,9 @@ exports.getAddProducts= (req,res,next)=>{
 
 exports.postAddProduct=(req,res,next)=>{
     //console.log(req.body);
-    products.push({title:req.body.title});
+    //products.push({title:req.body.title});
+    const product = new Products(req.body.title); 
+    product.save();
     res.redirect('/');
 }
 
@@ -33,8 +35,8 @@ exports.getProducts=(req,res,next)=>{
     
     //using handlebars
    //const products=adminData.products;
-   
-    res.render('shop',{
+   const products = Products.fetchall(); 
+   res.render('shop',{
         prods:products,
         title :'Shop',
         path :'/' , 
