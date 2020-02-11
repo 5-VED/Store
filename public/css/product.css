@@ -14,9 +14,9 @@
     width: 100%;
 }
 
- /* .form-control label{
+ .form-control label{
     color : blue;
-}  */
+} 
 
 .form-control input {
     border: 1px solid blue;
