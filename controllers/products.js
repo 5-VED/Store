@@ -35,13 +35,15 @@ exports.getProducts=(req,res,next)=>{
     
     //using handlebars
    //const products=adminData.products;
-   const products = Products.fetchall(); 
-   res.render('shop',{
-        prods:products,
-        title :'Shop',
-        path :'/' , 
-        hasProducts: products.length > 0,
-        activeShop: true,
-        productCSS: true
-    });
+     Products.fetchall((products=>{
+            res.render('shop',{
+            prods:products,
+            title :'Shop',
+            path :'/' , 
+            hasProducts: products.length > 0,
+            activeShop: true,
+            productCSS: true
+        });
+     })); 
+
 }

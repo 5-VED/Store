@@ -40,7 +40,7 @@ app.use((req,res,next)=>{
     //res.status(404).(path.join(rootDir,'views','404.html'));
 
     //Using Handlebars
-    res.status(404).render('404',{title:'404 Error'});
+    res.status(404).render('404',{title:'404 Error' , path : 'Error'});
 });
 
 
