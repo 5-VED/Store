@@ -1,4 +1,3 @@
-const products = [];
 const path = require('path');
 const fs = require('fs');
 
@@ -14,13 +13,12 @@ const fs = require('fs');
 
     fs.readFile(p,(err,fileContent)=>{
         if(err){
-          return   cb([]);
+          return cb([]);
         }else{
-            cb( JSON.parse(fileContent));
+            cb (JSON.parse(fileContent));
         }
     });
     //return products;
-
 };
 
 module.exports = class Product{
@@ -30,8 +28,6 @@ module.exports = class Product{
     }
 
     save(){
-
-        
         getProductsFromFile(products=>{
             products.push(this);
             fs.writeFile(p,JSON.stringify(products),(err)=>{

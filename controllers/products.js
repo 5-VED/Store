@@ -9,7 +9,7 @@ exports.getAddProducts= (req,res,next)=>{
     //show path to views
     //res.sendFile(path.join(rootDir,'views','addproduct.html'));
 
-    res.render('addproduct',{
+    res.render('admin/addproduct',{
         title:'Add Product', 
         path: '/admin/addproduct',
         formsCSS: true, 
@@ -36,7 +36,7 @@ exports.getProducts=(req,res,next)=>{
     //using handlebars
    //const products=adminData.products;
      Products.fetchall((products=>{
-            res.render('shop',{
+            res.render('shop/product-list',{
             prods:products,
             title :'Shop',
             path :'/' , 
@@ -46,4 +46,10 @@ exports.getProducts=(req,res,next)=>{
         });
      })); 
 
+
 }
+
+exports.cartControllerLogic=(req,res,next)=>{
+    res.render('cart');
+    title : cart
+};
