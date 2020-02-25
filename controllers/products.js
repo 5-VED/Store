@@ -38,18 +38,13 @@ exports.getProducts=(req,res,next)=>{
      Products.fetchall((products=>{
             res.render('shop/product-list',{
             prods:products,
-            title :'Shop',
+            title:'Shop',
             path :'/' , 
             hasProducts: products.length > 0,
             activeShop: true,
             productCSS: true
         });
      })); 
-
-
 }
 
-exports.cartControllerLogic=(req,res,next)=>{
-    res.render('cart');
-    title : cart
-};
+

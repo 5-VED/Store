@@ -12,4 +12,5 @@ router.get('/addproduct',productController.getAddProducts);//We dont execute get
 // /admin/addproduct => POST
 router.post('/addproduct',productController.postAddProduct);
 
+
 module.exports=router;
