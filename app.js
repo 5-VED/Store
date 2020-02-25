@@ -7,6 +7,7 @@ const body_parser=require('body-parser');
 const rootDir=require('./util/path');
 const hbs=require('express-handlebars');
 const ejs=require('ejs');
+const errorController=require('./controllers/error');
 
 //express() is a top level function exported by express module
 const app = express();
@@ -35,13 +36,7 @@ app.use(express.static(path.join(__dirname , "public")));
 
 app.use('/admin',adminRoutes);
 app.use(shopRoutes);
-app.use((req,res,next)=>{
-    //if we are sending html file 
-    //res.status(404).(path.join(rootDir,'views','404.html'));
-
-    //Using Handlebars
-    res.status(404).render('404',{title:'404 Error' , path : 'Error'});
-});
+app.use(errorController.error404);
 
 
 //http module is required to create server 
