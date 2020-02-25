@@ -1,6 +1,6 @@
                     //COmments of admin Model
 
-
+//first method
 //res.send('<form action="/admin/addproduct" method="POST"><input type="text" name="title"><button type="submit">Add Product</button></form>');
 
     // //we can also show the path in following way
