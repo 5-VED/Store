@@ -14,12 +14,12 @@
     width: 100%;
 }
 
- .form-control label{
-    color : blue;
-} 
+  .form-control label{
+    color : black;
+}  
 
 .form-control input {
-    border: 1px solid blue;
+    border: 2px solid black;
     font: inherit;
     border-radius: 2px;
 }
@@ -37,4 +37,5 @@ button:hover,
 button:active {
     background-color : blue; ;
     color: white;
+    align-content: center;
 }
