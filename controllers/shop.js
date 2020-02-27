@@ -7,6 +7,14 @@ exports.getCart=(req,res,next)=>{
     });
 };
 
+exports.getOrders=(req,res,next)=>{
+    res.render( 'shop/orders',{
+        path:'/orders',
+        title:'Your Orders'
+    });
+};
+
+
 exports.getIndex=(req,res,next)=>{
     Product.fetchall(products=>{
         res.render('shop/index',{

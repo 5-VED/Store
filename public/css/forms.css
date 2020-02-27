@@ -64,6 +64,6 @@
   
   .form-control input:focus,
   .form-control textarea:focus {
-    outline-color: blue;
+    outline-color: black;
   }
   
